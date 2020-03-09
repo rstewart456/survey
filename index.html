@@ -1,0 +1,221 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  html {
+    background-color: #0ABA8E;
+    text-align: center;
+  }
+
+  #form-outer {
+    background-color: #A8B4B1;
+    margin: auto;
+    border-radius: 10px;
+    width: 75%;
+  }
+
+  .rowtab:nth-child(odd) {
+    background-color: #E8F0EE;
+  }
+
+  .label {
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 10px;
+    vertical-align: top;
+  }
+
+  .rightab {
+    display: inline-block;
+    margin-left: 10px;
+  }
+
+  .input-field {
+    height: 40px;
+    width: 250px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 5px;
+  }
+
+  #number {
+    margin-left: 28px;
+  }
+
+  .dropdown {
+    height: 40px;
+    width: 150px;
+    margin-left: 52px;
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+
+  .pagerating,
+  input[type="checkbox"] {
+    float: right;
+  }
+
+  .checkbox {
+    padding: 1px;
+    margin-right: 2px;
+    margin-left: 1px;
+  }
+
+  #submit {
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
+    background-color: white;
+  }
+
+  @media screen and (max-width: 833px) {
+    .input-field {
+      width: 80%;
+    }
+  }
+
+  @media screen and (max-width: 520px) {
+    .rowtab:nth-child(even) {
+      background-color: #E8F0EE;
+    }
+
+    .label {
+      margin-top: 5%;
+      width: 80%;
+      text-align: center;
+      vertical-align: top;
+    }
+
+    .rightab {
+      width: 80%;
+      float: left;
+    }
+
+    .input-field {
+      width: 100%;
+      margin-left: 10%;
+    }
+
+    .checkbox {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pagerating {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #number {
+      width: 80%;
+      margin-right: 10%;
+      margin-left: 1%;
+    }
+
+    #comments {
+      width: 90%;
+      margin-left: 3%;
+    }
+
+    #comlab {
+      padding-left: 10%;
+    }
+
+    #number {
+      width: 100px;
+      margin-left: 10%;
+    }
+
+    .pagerating {
+      margin-left: 10%;
+      text-align: right;
+    }
+
+    .rightab {
+      vertical-align: top;
+    }
+  }
+</style>
+
+<body>
+  <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+  <h1 id="title">Survey Form</h1>
+  <div id="form-outer">
+    <p id="description">A Survey Form page by a student at freecodecamp</p>
+    <form id="survey-form" action="#">
+      <div class="rowtab">
+        <div class="label">
+          <label id="name-label" for="name">Name:</label>
+        </div>
+        <div class="rightab">
+          <input autofocus type="text" name="name" id="name" class="input-field" placeholder="Enter your name" required>
+        </div>
+      </div>
+      <div class="rowtab">
+        <div class="label">
+          <label id="email-label" for="email">Email:</label>
+        </div>
+        <div class="rightab">
+          <input type="email" name="email" id="email" class="input-field" required placeholder="Enter your Email">
+        </div>
+      </div>
+      <div class="rowtab">
+        <div class="label">
+          <label id="number-label" for="number">Age:</label>
+        </div>
+        <input type="number" name="age" id="number" min="1" max="125" class="input-field" placeholder="Age">
+      </div>
+      <div class="rowtab">
+        <div class="label">
+          <label for="position">Current position:</label>
+        </div>
+        <div class="rightab">
+          <select id="dropdown" name="position" class="dropdown">
+            <option value="1">None</option>
+            <option value="2">Student</option>
+            <option value="3">Part time</option>
+            <option value="4">Full time</option>
+          </select>
+        </div>
+      </div>
+      <div class="rowtab">
+        <div class="label">
+          <label for="pagerating">How would you rate this page.</label>
+        </div>
+        <div class="rightab">
+          <ul style="list-style: none;">
+            <li class="radio"><label>Strongly<input name="radiobutton" value="1" type="radio" class="pagerating"></li>
+            </label>
+            <li class="radio"><label>Maybe<input name="radiobutton" value="2" type="radio" class="pagerating"></li>
+            </label>
+            <li class="radio"><label>Against<input name="radiobutton" value="3" type="radio" class="pagerating"></li>
+            </label>
+            </lu>
+        </div>
+      </div>
+      <div class="rowtab">
+        <div class="label">
+          <label for="perferences">Peferences in Development.</label>
+        </div>
+        <div class="rightab">
+          <ul style="list-style: none;">
+            <li class="checkbox"><label>Front-End<input name="perfer" value="1" type="checkbox" class="pagerating"></li>
+            </label>
+            <li class="checkbox"><label>Back-End<input name="perfer" value="2" type="checkbox" class="pagerating"></li>
+            </label>
+            <li class="checkbox"><label>C# language<input name="perfer" value="3" type="checkbox" class="pagerating">
+            </li></label>
+            </lu>
+        </div>
+      </div>
+      <div class="rowtab">
+        <div class="label">
+          <label id="comlab" for="comments">Any Comments or Suggestions?</label>
+        </div>
+        <div class="rightTab">
+          <textarea id="comments" class="input-field" style="height:50px;resize:vertical;" name="comment"
+            placeholder="Enter your comment here..."></textarea>
+        </div>
+      </div>
+      <button id="submit" type="submit">Submit</button>
+    </form>
+  </div>
+</body>
